@@ -1,11 +1,37 @@
-     :root {
+     /*:root {
       --cream: #F0F4F8;
       --ink: #0D1B2A;
       --burgundy: #1A5C9E;
       --gold: #3A8FC9;
       --muted: #6A8099;
       --line: rgba(26,60,100,0.12);
-    }
+    }*/
+
+    :root {
+  --cream: #F7F5F2;
+  --ink: #1C1C1C;
+  --burgundy: #7A1C2E;   
+  --gold: #C6A75E;       
+  --muted: #6F6F6F;
+  --line: rgba(0,0,0,0.08);}
+  
+  /*
+  :root {
+  --cream: #F4F8FB;
+  --ink: #0F172A;
+  --burgundy: #0EA5A4;   // teal médico 
+  --gold: #38BDF8;       // celeste brillante 
+  --muted: #64748B;
+  --line: rgba(15,23,42,0.08);
+}*/
+/*:root {
+  --cream: #F4F8FB;
+  --ink: #0F172A;
+  --burgundy: #0EA5A4;   // teal médico 
+  --gold: #38BDF8;       // celeste brillante
+  --muted: #64748B;
+  --line: rgba(15,23,42,0.08);
+}*/
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
