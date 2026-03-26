@@ -40,7 +40,8 @@
     body {
       background: var(--cream);
       color: var(--ink);
-      font-family: Calibri, Arial, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
+
       font-weight: 300;
       overflow-x: hidden;
       cursor: none;
@@ -127,22 +128,56 @@
       opacity: 0;
       animation: fadeUp 1s 0.3s forwards;
     }
+.hero-name h1 {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
 
-    .hero-name h1 {
-      font-family: Arial, Calibri, sans-serif;
-      font-weight: 700;
-      font-size: clamp(2.8rem, 5vw, 5rem);
-      line-height: 1.0;
-      color: var(--cream);
-      opacity: 0;
-      animation: fadeUp 1s 0.5s forwards;
-    }
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.0;
+  color: var(--cream);
 
-    .hero-name h1 em {
-      font-style: normal;
-      color: var(--gold);
-    }
+  opacity: 0;
+  animation: fadeUp 1s 0.5s forwards;
+}
 
+/* Línea animada debajo del nombre */
+.hero-name h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  animation: lineReveal 1s 1.2s forwards;
+}
+
+@keyframes lineReveal {
+  to { width: 100%; }
+}
+
+/* Apellido */
+.hero-name h1 em {
+  font-style: normal;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
+/* Glow sutil detrás del apellido */
+.hero-name h1 em::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  opacity: 0.08;
+  filter: blur(8px);
+  z-index: -1;
+}
     .hero-name .title-line {
       margin-top: 2rem;
       font-family: Calibri, Arial, sans-serif;
@@ -172,8 +207,7 @@
       font-size: 7rem;
       font-weight: 700;
       color: transparent;
-      -webkit-text-stroke: 1px rgba(26,23,20,0.08);
-      letter-spacing: 0.2em;
+      -webkit-text-stroke: 1px rgba(0,0,0,0.08);      letter-spacing: 0.2em;
       pointer-events: none;
       white-space: nowrap;
     }
@@ -186,7 +220,7 @@
     .summary-block p {
       font-size: 1.05rem;
       line-height: 1.85;
-      color: #3a3530;
+      color: var(--ink);
       max-width: 420px;
       margin-bottom: 2.5rem;
     }
@@ -297,8 +331,10 @@
       position: relative;
       transition: background 0.2s;
     }
-
-    .exp-item:hover { background: rgba(123,45,62,0.025); }
+.exp-item:hover {
+  background: rgba(122,28,46,0.04);
+}
+    /*.exp-item:hover { background: rgba(123,45,62,0.025); }*/
     .exp-item:hover .exp-dot { transform: scale(1.5); background: var(--gold); }
 
     .exp-year {
@@ -361,7 +397,7 @@
       transition: background 0.3s;
     }
 
-    .edu-item:hover { background: #e8f0f8; }
+    .edu-item:hover { background: rgba(0,0,0,0.03); }
 
     .edu-year {
       font-family: Calibri, Arial, sans-serif;
@@ -399,7 +435,7 @@
 
     .skill-list li {
       font-size: 0.9rem;
-      color: #3a3530;
+      color: var(--ink);
       padding: 0.5rem 0;
       border-bottom: 1px solid var(--line);
       display: flex;
@@ -437,10 +473,10 @@
     }
 
     .cert-tag:hover {
-      border-color: var(--burgundy);
-      color: var(--burgundy);
-      background: rgba(26,92,158,0.05);
-    }
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+  background: rgba(122,28,46,0.06);
+}
 
     .cert-tag.highlight {
       border-color: var(--gold);
@@ -470,10 +506,22 @@
     }
 
     /* ANIMATIONS */
-    @keyframes fadeUp {
+    /*@keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
+    }*/
+    @keyframes fadeUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    filter: blur(4px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+    filter: blur(0);
+  }
+}
 
     @keyframes fadeIn {
       to { opacity: 1; }
